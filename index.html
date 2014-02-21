@@ -27,6 +27,21 @@
   <script type="text/javascript" src="js/custom.js"></script>
     <script>
     $(document).ready(function(){
+       //Pagination update on scroll function
+        $(window).scroll(function() {
+        var windscroll = $(window).scrollTop();
+            if (windscroll >= 500) {
+                $('.main section').each(function(i) {
+                if ($(this).position().top -90 <= windscroll) {
+                    $('.main section.active').removeClass('active');
+                    $('.main section').eq(i).addClass('active');
+                    $('.onepage-pagination a.active').removeClass('active');
+                    $('.onepage-pagination a').eq(i).addClass('active');
+                }
+                });
+            }
+        }).scroll();
+        
       var windowFoldHeight = $(window).height() ;
       $('section').css("height",windowFoldHeight+"px");
 
