@@ -12,14 +12,10 @@
     pagination: true,
     updateURL: false,
     keyboard: true,
-    beforeMove: false,
-    afterMove: false,
-    loop: false,
-    responsiveFallback: false
-	};
+  };
 
 
-	$.fn.swipeEvents = function() {
+  $.fn.swipeEvents = function() {
       return this.each(function() {
 
         var startX,
