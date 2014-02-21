@@ -95,11 +95,6 @@
       if (typeof settings.beforeMove == 'function') settings.beforeMove( current.data("index"));
       current.removeClass("active")
       next.addClass("active");
-     if(settings.pagination == true) {
-       $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
-       $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active");
-     }
-
       $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
       $("body").addClass("viewing-page-"+next.data("index"))
 
@@ -131,10 +126,6 @@
       if (typeof settings.beforeMove == 'function') settings.beforeMove(current.data("index"));
       current.removeClass("active")
       next.addClass("active")
-     if(settings.pagination == true) {
-       $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
-       $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active");
-     }
       $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
       $("body").addClass("viewing-page-"+next.data("index"))
 
@@ -153,8 +144,6 @@
             if (typeof settings.beforeMove == 'function') settings.beforeMove(current.data("index"));
             current.removeClass("active")
             next.addClass("active")
-           $(".onepage-pagination li a" + ".active").removeClass("active");
-           $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("active");
             $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
             $("body").addClass("viewing-page-"+next.data("index"))
 
