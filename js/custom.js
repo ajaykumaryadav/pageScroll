@@ -202,7 +202,6 @@
       next = $(settings.sectionContainer + "[data-index='" + (init_index) + "']");
       if(next) {
         next.addClass("active")
-        if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
         $("body").addClass("viewing-page-"+next.data("index"))
         if (history.replaceState && settings.updateURL == true) {
           var href = window.location.href.substr(0,window.location.href.indexOf('#')) + "#" + (init_index);
@@ -215,7 +214,6 @@
     }else{
       $(settings.sectionContainer + "[data-index='1']").addClass("active")
       $("body").addClass("viewing-page-1")
-      if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='1']").addClass("active");
     }
       if(settings.pagination == true)  {
           $(".onepage-pagination li a").click(function (){
@@ -226,8 +224,6 @@
                   if(next) {
                       current.removeClass("active")
                       next.addClass("active")
-                     $(".onepage-pagination li a" + ".active").removeClass("active");
-                     $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("active");
                       $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, '');
                       $("body").addClass("viewing-page-"+next.data("index"))
                   }
